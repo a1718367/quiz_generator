@@ -1,0 +1,39 @@
+
+*{box-sizing: border-box;}
+
+#ask, #end, #hscore{
+    display: none;
+}
+
+.container{
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    
+}
+#feedback{
+    margin-left: 1em;
+    padding-top: 0%;
+    color: white;
+    
+}
+
+#topscore{
+    font-size: large;
+    color: green;
+
+}
+
+.btn{
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+}
+
+footer{
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+    
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Code Quiz</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav class="navbar bg-dark">
+        <div class="navbar-brand text-light">Code Quiz</div>
+    </nav>
+
+<main class="container">
+    <div class="row justify-content-center">
+
+    
+        <div class="col-lg-8 col-sm-12 quiz">
+            <h4 class="container border border-dark rounded-pill text-center">Code Quiz Challenge</h4>
+
+            <!--landing page-->
+            <div class="row" id="home">
+                <div class="container">
+                    <h5>Welcome to the code quiz Challenge</h5>
+                    <h6>Rules of the Game :</h6>
+                    <ul>
+                        <li>There are 5 questions</li>
+                        <li>You have 60 seconds to complete the quiz</li>
+                        <li>Wrong answer will deduct 5 seconds from the remaining time</li>
+                        <li>The game will end when the timer reach 0 or all question is answeared</li>
+                    </ul>
+                    <div><p>Press the Start button to commence</p></div>
+                    
+                </div>
+                
+            </div>
+
+            <!--Question-->
+            <div class="row" id="ask">
+                <div class="container">
+            <div class="row container question">
+                <h5 id="question">Question goes here</h5>
+            </div>
+            <div class="row container choice">
+                <button type="button" class="btn btn-outline-success btn-block"  id="btn0"><span id="ans0">1</span></button>
+                <button type="button" class="btn btn-outline-success btn-block"  id="btn1"><span id="ans1">2</span></button>
+                <button type="button" class="btn btn-outline-success btn-block"  id="btn2"><span id="ans2">3</span></button>
+                <button type="button" class="btn btn-outline-success btn-block"  id="btn3"><span id="ans3">4</span></button>
+                <div class="row">
+                    <div class="font-weight-light px-3 text-center" id="feedback"></div>    
+                </div>
+                
+            </div>
+            </div>
+            </div>
+
+            <!--End-->
+            <div class="row" id="end">
+                <div class="container">
+                    <h5>Your Score is: <span id="score"></span></h5>
+                    <h5>Please enter your name to proceed</h5>
+                        <input type="text" class="form-control" onfocus="this.value=''" onkeyup="validate()" placeholder="Your Name" id="user">
+                        <button type="button" class="btn btn-secondary" id="save">Save Your Score</button>
+                </div>
+
+            </div>
+            <!--Highscore-->
+            <div class="row" id="hscore">
+                <div class="container">
+                    <h5>High Scores</h5>
+                    <ol id="topscore">
+                    </ol>
+                    <button type="button" class="btn btn-secondary" id="remove">Remove Past High Score</button>
+                    <h5>Press the Start button to Retry</h5>
+
+                </div>
+                
+            </div>
+
+                
+            <!--<div class="row container progress">
+                <div class="progress-bar" id="progbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>Feedback-->
+            
+            
+
+            <div class="row">
+                <div class="container">
+                    <button type="button" class = "btn btn-secondary" id="start">Start</button>
+                    <h4>Time Remaining: <span id="display">60</span></h4>
+                </div>
+
+            
+            </div>
+            
+        </div>
+
+
+    </div>
+    
+
+
+</main>
+
+
+    
+    <script src="quiz.js"></script>
+    <footer>
+        <div class="clearfix container-fluid">
+            <span class="float-right">&copy;PSO Co. 2020</span>
+        </div>  
+    </footer>       
+</body>
+</html>
