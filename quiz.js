@@ -16,6 +16,8 @@ var d = document.getElementById("btn3");
 var save = document.getElementById("save");
 var del = document.getElementById("remove");
 
+//Q & A & choise array
+
 var q = [
     {question: "Inside which HTML element do we put the JavaScript?",
     choise: ["<script>","<js>","<scripting>","<javascript>"],
@@ -39,7 +41,7 @@ var score = 0
 //var num1 = 80;
 populate(i);
 
-    
+//button call function - onclick i++; populate Q&A according to index; assign index no to each choise
 a.addEventListener("click",function(){pick = 0;chkans(pick,i);i+=1;populate(i)});
 b.addEventListener("click",function(){pick = 1;chkans(pick,i);i+=1;populate(i)});
 c.addEventListener("click",function(){pick = 2;chkans(pick,i);i+=1;populate(i)});
@@ -47,7 +49,7 @@ d.addEventListener("click",function(){pick = 3;chkans(pick,i);i+=1;populate(i)})
 save.addEventListener("click",function(){highscore()});
 del.addEventListener("click",function(){localStorage.clear("highscore");delrank()});
        
-//evaluate response
+//evaluate response - compare choise index with preset ans index; return result in feedback
 function chkans(pick,i){
 if(i<q.length){
 var pickans = q[i].choise[pick];
@@ -55,7 +57,7 @@ if(pickans == q[i].ans){score +=1 ;feedback.textContent = "Correct"; feedback.st
 else{num1 -= 5;feedback.textContent = "Wrong";feedback.style.backgroundColor = "red"}
 }else{return}}
 
-//populate question & options - i+ when button is pressed and load questions and options based on q array index
+//populate question & options based on q array index; call finish func at the end of q index
 function populate(j){
     if(j<q.length){
     document.getElementById("question").textContent = q[j].question;
@@ -69,7 +71,7 @@ function populate(j){
     
 }
 }
-//Timer v2 - end test if finish answering all or time reach 0 
+//Timer v2 - start timer onclick of startbtn; call start func; end test if finish answering all or timer reaches 0
 startbtn.addEventListener("click", function(){
     startbtn.disabled = true;
     var x = setInterval(()=>{
@@ -87,7 +89,7 @@ start();
 })
 
 
-//start quiz hide home and diaplay question
+//start quiz - reset i,score,num1; call populate func to display 1st Q&A; hide home,end,hscore
 function start(){
     i = 0
     score = 0
@@ -102,7 +104,7 @@ function start(){
 }
 
 
-//finish div hide question and display end
+//Quiz end - hide q; display score; set focus on user input; diabled all button to force input
 function finish(){
     ask.style.display = 'none';
     end.style.display = 'block';
@@ -112,7 +114,7 @@ function finish(){
 
         
 }
-//store score to local storage
+//store score to local storage - set rank [] if no 'highscore' stored on local storage
 var rank =JSON.parse(localStorage.getItem("highscore")) || [];
 function highscore(){
     
@@ -149,7 +151,7 @@ function topscore(){
     }
     
 }
-//remove score ranking from local storage
+//remove score ranking from local storage + reset 'topscore' innerhtml
 function delrank(){
     rank = [];
     document.getElementById("topscore").innerHTML = "";
