@@ -4,7 +4,7 @@
 
 <ul>
 <li>Click the Start button to start the quiz</li>
-<li>Timer will commence from 60 seconds</li>
+<li>Timer will commence from 30 seconds</li>
 <li>Questions and answer options will change when an answer is selected</li>
 <li>Correct answer will +1 to score and return 'Correct' in feedback</li>
 <li>Wrong answer will -5 seconds from the timer and return 'Wrong' in feedback</li>
