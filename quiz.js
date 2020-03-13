@@ -93,7 +93,7 @@ start();
 function start(){
     i = 0
     score = 0
-    num1 = 60;
+    num1 = 30;
     populate(i);
     home.style.display = 'none';
     end.style.display = 'none';
